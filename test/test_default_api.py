@@ -63,6 +63,13 @@ class TestDefaultApi(unittest.TestCase):
         """
         pass
 
+    def test_sp_voices(self):
+        """Test case for sp_voices
+
+        Gets the full list of Standard & Premium (S&P) voices.  # noqa: E501
+        """
+        pass
+
     def test_voices(self):
         """Test case for voices
 

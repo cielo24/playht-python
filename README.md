@@ -182,6 +182,27 @@ configuration.api_key['X-USER-ID'] = 'YOUR_API_KEY'
 api_instance = playht.DefaultApi(playht.ApiClient(configuration))
 
 try:
+    # Gets the full list of Standard & Premium (S&P) voices.
+    api_response = api_instance.sp_voices()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->sp_voices: %s\n" % e)
+
+# Configure API key authorization: ApiKeyAuth
+configuration = playht.Configuration()
+configuration.api_key['AUTHORIZATION'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['AUTHORIZATION'] = 'Bearer'
+# Configure API key authorization: UserAuth
+configuration = playht.Configuration()
+configuration.api_key['X-USER-ID'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-USER-ID'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = playht.DefaultApi(playht.ApiClient(configuration))
+
+try:
     # Gets the full list of stock PlayHT Voices available for use with the API.
     api_response = api_instance.voices()
     pprint(api_response)
@@ -200,6 +221,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**create_instant_voice_clone_url**](docs/DefaultApi.md#create_instant_voice_clone_url) | **POST** /api/v2/cloned-voices/instant/ | Create Instant Voice Clone (via file URL). Create an instant voice clone by providing an URL for a sample audio file.
 *DefaultApi* | [**delete_cloned_voices**](docs/DefaultApi.md#delete_cloned_voices) | **DELETE** /api/v2/cloned-voices | Delete Cloned Voices. Deletes a cloned voice created by the user using the provided voice_id.
 *DefaultApi* | [**get_conversion_job_status**](docs/DefaultApi.md#get_conversion_job_status) | **GET** /api/v1/articleStatus | Get conversion job status. Gets text-to-speech job status and generated audio file URL.
+*DefaultApi* | [**sp_voices**](docs/DefaultApi.md#sp_voices) | **GET** /api/v1/getVoices | Gets the full list of Standard &amp; Premium (S&amp;P) voices.
 *DefaultApi* | [**voices**](docs/DefaultApi.md#voices) | **GET** /api/v2/voices | Gets the full list of stock PlayHT Voices available for use with the API.
 
 ## Documentation For Models
@@ -207,6 +229,8 @@ Class | Method | HTTP request | Description
  - [ClonedVoiceResponse](docs/ClonedVoiceResponse.md)
  - [ConversionJobStatusResponse](docs/ConversionJobStatusResponse.md)
  - [ErrorResponse](docs/ErrorResponse.md)
+ - [SPVoice](docs/SPVoice.md)
+ - [SPVoiceResponse](docs/SPVoiceResponse.md)
  - [SSMLConversionPayload](docs/SSMLConversionPayload.md)
  - [SSMLConversionPayloadPronunciations](docs/SSMLConversionPayloadPronunciations.md)
  - [SSMLConversionResponse](docs/SSMLConversionResponse.md)

@@ -17,6 +17,8 @@ from __future__ import absolute_import
 from playht.models.cloned_voice_response import ClonedVoiceResponse
 from playht.models.conversion_job_status_response import ConversionJobStatusResponse
 from playht.models.error_response import ErrorResponse
+from playht.models.sp_voice import SPVoice
+from playht.models.sp_voice_response import SPVoiceResponse
 from playht.models.ssml_conversion_payload import SSMLConversionPayload
 from playht.models.ssml_conversion_payload_pronunciations import SSMLConversionPayloadPronunciations
 from playht.models.ssml_conversion_response import SSMLConversionResponse
